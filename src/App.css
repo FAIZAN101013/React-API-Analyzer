@@ -1,0 +1,224 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  max-width: 1200px; /* Optional: You can adjust this to limit width */
+  margin: 0 auto; /* Centers the container horizontally */
+  animation: fadeIn 1s ease-out; /* Animation to fade in the app */
+}
+
+/* Header */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-out;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1; /* Make it take up available space */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 40px;
+  width: calc(100% - 80px); /* Ensure content doesn't overflow */
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Input Section */
+.input-container {
+  width: 48%; /* Takes up 48% of the screen */
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.input-container input, .input-container button {
+  padding: 12px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus, .input-container button:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.input-container button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #45a049;
+}
+
+/* Result Section */
+.result-container {
+  width: 48%; /* Takes up 48% of the screen */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  flex-grow: 1; /* Allow it to grow and take available space */
+  overflow-y: auto; /* Make the result container scrollable if content is too large */
+  animation: fadeInRight 1s ease-out;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Error and Loading */
+.loading {
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
